@@ -4,14 +4,13 @@
 * @Email:  tamyworld@gmail.com
 * @Filename: comment.ts
 * @Last modified by:   tushar
-* @Last modified time: 2017-01-08T19:40:54+05:30
+* @Last modified time: 2017-01-09T00:45:32+05:30
 */
 
 
 
 export class Comment {
   constructor(
-    public id:String,
     public author:String,
     public text:String
   ){}

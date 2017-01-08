@@ -4,7 +4,7 @@
 * @Email:  tamyworld@gmail.com
 * @Filename: comment-form.component.ts
 * @Last modified by:   tushar
-* @Last modified time: 2017-01-08T23:50:18+05:30
+* @Last modified time: 2017-01-09T00:46:01+05:30
 */
 
 
@@ -33,7 +33,7 @@ export class CommentFormComponent implements OnChanges {
     private commentService:CommentService
   ) { }
 
-  private model = new Comment(null,'','');
+  private model = new Comment('','');
   private editing=false;
 
   @Input() editId:string;
@@ -48,7 +48,7 @@ export class CommentFormComponent implements OnChanges {
     }
     commentOperation.subscribe(comments=>{
       EmitterService.get(this.listId).emit(comments);
-      this.model=new Comment(null,'', '');
+      this.model=new Comment('', '');
       if(this.editing) this.editing=!this.editing;
     },
     error=>{
