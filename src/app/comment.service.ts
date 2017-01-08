@@ -4,7 +4,7 @@
 * @Email:  tamyworld@gmail.com
 * @Filename: comment.service.ts
 * @Last modified by:   tushar
-* @Last modified time: 2017-01-08T20:55:07+05:30
+* @Last modified time: 2017-01-09T00:41:11+05:30
 */
 
 
@@ -39,10 +39,10 @@ export class CommentService {
     let bodyString=JSON.stringify(body);
     let headers=new Headers({'Content-type':'application/json'});
     let options=new RequestOptions({headers:headers})
-    return this.http.put(`${this.commentsUrl}/${body['id']}`,body,options).map(res=>res.json()).catch((error):any=>Observable.throw(error.json()||'Server error'));
+    return this.http.put(`${this.commentsUrl}${body['id']}/`,body,options).map(res=>res.json()).catch((error):any=>Observable.throw(error.json()||'Server error'));
   }
   removeComment(id:string):Observable<any>{
-    return this.http.delete(`${this.commentsUrl}/${id}`).map(res=>res.json()).catch((error):any=>Observable.throw(error.json()||'Server error'));
+    return this.http.delete(`${this.commentsUrl}${id}/`).map(res=>res.json()).catch((error):any=>Observable.throw(error.json()||'Server error'));
   }
 
 }
