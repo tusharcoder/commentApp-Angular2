@@ -1,0 +1,17 @@
+<!--
+@Author: Tushar Agarwal(tusharcoder) <tushar>
+@Date:   2017-01-08T23:55:15+05:30
+@Email:  tamyworld@gmail.com
+@Filename: comment-list.component.html
+@Last modified by:   tushar
+@Last modified time: 2017-01-08T23:59:40+05:30
+-->
+
+
+
+<comment-box
+        [editId]="editId"
+        [listId]="listId"
+        *ngFor="let comment of comments"
+        [comment]="comment">
+    </comment-box>

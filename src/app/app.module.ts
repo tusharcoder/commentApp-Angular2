@@ -1,26 +1,35 @@
+/**
+* @Author: Tushar Agarwal(tusharcoder) <tushar>
+* @Date:   2017-01-09T00:07:53+05:30
+* @Email:  tamyworld@gmail.com
+* @Filename: app.module.ts
+* @Last modified by:   tushar
+* @Last modified time: 2017-01-09T00:28:51+05:30
+*/
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CommentComponent } from './comment/comment.component';
-import { CommentBoxComponent } from './comment-box/comment-box.component';
-import { CommentFormComponent } from './comment-form/comment-form.component';
+import {CommentModule} from './comment/comment.module';
+import {EmitterService} from './emitter.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentComponent,
-    CommentBoxComponent,
-    CommentFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule,
+    CommentModule,
   ],
-  providers: [],
+  providers: [EmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
